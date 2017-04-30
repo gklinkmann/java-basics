@@ -25,8 +25,8 @@ import de.koo.javabasics.examples.bmi.BMICalculator;
 public class BMICalculatorGUI extends Frame {
 	// Anfang Attribute
 	private static final long serialVersionUID = 6773296787435533965L;
-	private TextField txFieldAlter, txFieldGroesse, txFieldGewicht, txFieldAusgabe;
-	private Checkbox chBoxOptimalerBMI;
+	private TextField txFieldAge, txFieldSize, txFieldWeight, txFieldOutput;
+	private Checkbox chBoxOptimalBMI;
 	// Ende Attribute
 
 	/**
@@ -46,15 +46,15 @@ public class BMICalculatorGUI extends Frame {
 	/**
 	 * anzeigen der Oberfläche
 	 */
-	private void anzeigen() {
-		Label lbUeberschrift = new Label();
-		Label lbAlter = new Label();
-		Label lbGroesse = new Label();
-		Label lbGewicht = new Label();
-		Button btBerechnung = new Button();
-		Label lbAusgabe = new Label();
-		Label lbOptimalerBMI = new Label();
-		Button btEnde = new Button();
+	public void show() {
+		Label lbHeading = new Label();
+		Label lbAge = new Label();
+		Label lbSize = new Label();
+		Label lbWeight = new Label();
+		Button btCalculation = new Button();
+		Label lbOutput = new Label();
+		Label lbOptimalBMI = new Label();
+		Button btEnd = new Button();
 
 		// Frame-Initialisierung
 		addWindowListener(new WindowAdapter() {
@@ -76,83 +76,83 @@ public class BMICalculatorGUI extends Frame {
 		add(cp);
 
 		// Überschrift
-		lbUeberschrift.setBounds(16, 16, 262, 36);
-		lbUeberschrift.setText("BMI Berechnung:");
-		lbUeberschrift.setFont(new Font("Dialog", Font.BOLD, 12));
-		cp.add(lbUeberschrift);
+		lbHeading.setBounds(16, 16, 262, 36);
+		lbHeading.setText("BMI Berechnung:");
+		lbHeading.setFont(new Font("Dialog", Font.BOLD, 12));
+		cp.add(lbHeading);
 		
 		// Label Alter
-		lbAlter.setBounds(16, 64, 110, 20);
-		lbAlter.setText("Alter: ");
-		cp.add(lbAlter);
+		lbAge.setBounds(16, 64, 110, 20);
+		lbAge.setText("Alter: ");
+		cp.add(lbAge);
 		
 		// Textfeld Alter
-		txFieldAlter = new TextField();
-		txFieldAlter.setBounds(168, 64, 110, 20);
-		cp.add(txFieldAlter);
+		txFieldAge = new TextField();
+		txFieldAge.setBounds(168, 64, 110, 20);
+		cp.add(txFieldAge);
 		
 		// Label Groesse
-		lbGroesse.setBounds(16, 88, 110, 20);
-		lbGroesse.setText("Größe: ");
-		cp.add(lbGroesse);
+		lbSize.setBounds(16, 88, 110, 20);
+		lbSize.setText("Größe: ");
+		cp.add(lbSize);
 		
 		// Textfeld Groesse
-		txFieldGroesse = new TextField();
-		txFieldGroesse.setBounds(168, 88, 110, 20);
-		cp.add(txFieldGroesse);
+		txFieldSize = new TextField();
+		txFieldSize.setBounds(168, 88, 110, 20);
+		cp.add(txFieldSize);
 		
 		// Label Gewicht
-		lbGewicht.setBounds(16, 112, 110, 20);
-		lbGewicht.setText("Gewicht: ");
-		cp.add(lbGewicht);
+		lbWeight.setBounds(16, 112, 110, 20);
+		lbWeight.setText("Gewicht: ");
+		cp.add(lbWeight);
 		
 		// Textfeld Gewicht
-		txFieldGewicht = new TextField();
-		txFieldGewicht.setBounds(168, 112, 110, 20);
-		cp.add(txFieldGewicht);
+		txFieldWeight = new TextField();
+		txFieldWeight.setBounds(168, 112, 110, 20);
+		cp.add(txFieldWeight);
 		
 		// Button Berechnung
-		btBerechnung.setBounds(92, 152, 115, 25);
-		btBerechnung.setLabel("Berechnung");
-		btBerechnung.addActionListener(new ActionListener() {
+		btCalculation.setBounds(92, 152, 115, 25);
+		btCalculation.setLabel("Berechnung");
+		btCalculation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				btBerechnungActionPerformed(evt);
+				btCalculationActionPerformed(evt);
 			}
 		});
-		cp.add(btBerechnung);
+		cp.add(btCalculation);
 
 		// Label Ausgabe
-		lbAusgabe.setBounds(16, 208, 60, 20);
-		lbAusgabe.setText("BMI: ");
-		cp.add(lbAusgabe);
+		lbOutput.setBounds(16, 208, 60, 20);
+		lbOutput.setText("BMI: ");
+		cp.add(lbOutput);
 
 		// Textfeld Ausgabe
-		txFieldAusgabe = new TextField();
-		txFieldAusgabe.setBounds(68, 208, 210, 20);
-		txFieldAusgabe.setEditable(false);
-		cp.add(txFieldAusgabe);
+		txFieldOutput = new TextField();
+		txFieldOutput.setBounds(68, 208, 210, 20);
+		txFieldOutput.setEditable(false);
+		cp.add(txFieldOutput);
 
 		// Label optimaler BMI
-		lbOptimalerBMI.setBounds(16, 232, 100, 20);
-		lbOptimalerBMI.setText("optimaler BMI: ");
-		cp.add(lbOptimalerBMI);
+		lbOptimalBMI.setBounds(16, 232, 100, 20);
+		lbOptimalBMI.setText("optimaler BMI: ");
+		cp.add(lbOptimalBMI);
 
 		// CheckBox optimaler BMI
-		chBoxOptimalerBMI = new Checkbox();
-		chBoxOptimalerBMI.setBounds(108, 232, 210, 20);
-		chBoxOptimalerBMI.setFocusable(false);
-		chBoxOptimalerBMI.setEnabled(false);
-		cp.add(chBoxOptimalerBMI);
+		chBoxOptimalBMI = new Checkbox();
+		chBoxOptimalBMI.setBounds(108, 232, 210, 20);
+		chBoxOptimalBMI.setFocusable(false);
+		chBoxOptimalBMI.setEnabled(false);
+		cp.add(chBoxOptimalBMI);
 		
 		// Button Ende
-		btEnde.setBounds(112, 248, 75, 25);
-		btEnde.setLabel("Ende");
-		btEnde.addActionListener(new ActionListener() {
+		btEnd.setBounds(112, 248, 75, 25);
+		btEnd.setLabel("Ende");
+		btEnd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				btEndeActionPerformed(evt);
+				btEndActionPerformed(evt);
 			}
 		});
-		cp.add(btEnde);
+		cp.add(btEnd);
 
 		setVisible(true);
 	}
@@ -162,31 +162,31 @@ public class BMICalculatorGUI extends Frame {
 	 * 
 	 * @param evt
 	 */
-	public void btBerechnungActionPerformed(ActionEvent evt) {
+	public void btCalculationActionPerformed(ActionEvent evt) {
 		// Eingabe der Zahlen
-		String eingabeAlter = txFieldAlter.getText(); 
-		String eingabeGroesse = txFieldGroesse.getText(); 
-		String eingabeGewicht = txFieldGewicht.getText();
-		Integer alter = new Integer(eingabeAlter);
-		Double groesse = new Double(eingabeGroesse);
-		Double gewicht = new Double(eingabeGewicht);
+		String inputAge = txFieldAge.getText(); 
+		String inputSize = txFieldSize.getText(); 
+		String inputWeight = txFieldWeight.getText();
+		Integer age = new Integer(inputAge);
+		Double size = new Double(inputSize);
+		Double weight = new Double(inputWeight);
 
 		// Erzeugen eines neuen Objekts der Klasse Rechenoperation
-		BMICalculator bmiRechner = new BMICalculator();
-		bmiRechner.setAlter(alter);
-		bmiRechner.setGroesse(groesse);
-		bmiRechner.setGewicht(gewicht);
-		Double ergebnis = bmiRechner.berechnen();
-		String interpretation=bmiRechner.interpretieren();
+		BMICalculator bmiCalculator = new BMICalculator();
+		bmiCalculator.setAge(age);
+		bmiCalculator.setSize(size);
+		bmiCalculator.setWeight(weight);
+		Double result = bmiCalculator.calculate();
+		String interpretation=bmiCalculator.interpret();
 		
 		// Ausgabe des Ergebnisses
-		String ausgabe = ergebnis.toString(); 
-		txFieldAusgabe.setText(ausgabe+" - "+interpretation);
+		String ausgabe = result.toString(); 
+		txFieldOutput.setText(ausgabe+" - "+interpretation);
 		
-		if (bmiRechner.isOptimalterBMMI()) {
-			chBoxOptimalerBMI.setState(true);
+		if (bmiCalculator.isOptimalBMI()) {
+			chBoxOptimalBMI.setState(true);
 		} else {
-			chBoxOptimalerBMI.setState(false);
+			chBoxOptimalBMI.setState(false);
 		} 
 	}
 
@@ -195,7 +195,7 @@ public class BMICalculatorGUI extends Frame {
 	 * 
 	 * @param evt
 	 */
-	public void btEndeActionPerformed(ActionEvent evt) {
+	public void btEndActionPerformed(ActionEvent evt) {
 		System.exit(0);
 	}
 
@@ -204,8 +204,8 @@ public class BMICalculatorGUI extends Frame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		BMICalculatorGUI rechnerGUI=new BMICalculatorGUI("BMI Rechner");
-		rechnerGUI.anzeigen();
+		BMICalculatorGUI calculatorGUI=new BMICalculatorGUI("BMI Rechner");
+		calculatorGUI.show();
 	}
 
 }

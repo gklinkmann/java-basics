@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import de.koo.javabasics.examples.bmi.BMICalculator;
 
 public class BMICalculatorCLI {
-	private Double groesse;
-	private Double gewicht;
-	private Integer alter;
+	private Double size;
+	private Double weight;
+	private Integer age;
 	
 
 	/**
@@ -19,26 +19,26 @@ public class BMICalculatorCLI {
 	/**
 	 * Tastatureingaben entgegennehmen
 	 */
-	private void eingeben() {
+	private void readInput() {
 
 		// Tastatureingabestrom
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			try {
 				// Tastatureingabe von zwei ganzen Zahlen
-				if (groesse  == null) {
+				if (size  == null) {
 					System.out.print("Bitte die Groesse eingeben: ");
-					groesse = new Double(in.readLine());
+					size = new Double(in.readLine());
 				} 
 				
-				if (gewicht  == null) {
+				if (weight  == null) {
 					System.out.print("Bitte das Gewicht eingeben: ");
-					gewicht = new Double(in.readLine());					
+					weight = new Double(in.readLine());					
 				}
 				
-				if (alter  == null) {
+				if (age  == null) {
 					System.out.print("Bitte das Alter eingeben: ");
-					alter = new Integer(in.readLine());					
+					age = new Integer(in.readLine());					
 				}
 
 				break;
@@ -54,12 +54,12 @@ public class BMICalculatorCLI {
 	/**
 	 * Berechnungen ausführen und auf der Konsole ausgeben
 	 */
-	private void berechnen() {
+	private void calculate() {
 		// Konsolenausgabe der eingelesenen Zahl
-		BMICalculator bmiRechner=new BMICalculator(groesse,gewicht,alter);
-		System.out.println("BMI: " + bmiRechner.berechnen() +" - "+ bmiRechner.interpretieren());
+		BMICalculator bmiRechner=new BMICalculator(size,weight,age);
+		System.out.println("BMI: " + bmiRechner.calculate() +" - "+ bmiRechner.interpret());
 
-		if (bmiRechner.isOptimalterBMMI()) {
+		if (bmiRechner.isOptimalBMI()) {
 			System.out.println("optimaler BMI");
 		} else {
 			System.out.println("es besteht Verbesserungspotential :-)");
@@ -73,7 +73,7 @@ public class BMICalculatorCLI {
 	 */
 	public static void main(String[] args) {
 		BMICalculatorCLI rechnerCLI = new BMICalculatorCLI();
-		rechnerCLI.eingeben();
-		rechnerCLI.berechnen();
+		rechnerCLI.readInput();
+		rechnerCLI.calculate();
 	}
 }

@@ -1,58 +1,58 @@
 package de.koo.javabasics.examples.bmi;
 
 public class BMICalculator {
-	private Double groesse, gewicht;
+	private Double size, weight;
 	private Double bmi;
-	private Integer alter;
+	private Integer age;
 
 	
 	public BMICalculator() {
 		bmi=0.0;
-		alter=0;
+		age=0;
 	}
 
-	public BMICalculator(Double groesse, Double gewicht) {
-		this.groesse = groesse;
-		this.gewicht = gewicht;
-		alter=0;
+	public BMICalculator(Double size, Double weight) {
+		this.size = size;
+		this.weight = weight;
+		age=0;
 	}
 
-	public BMICalculator(Double groesse, Double gewicht,Integer alter) {
-		this.groesse = groesse;
-		this.gewicht = gewicht;
-		this.alter = alter;
+	public BMICalculator(Double size, Double weight,Integer age) {
+		this.size = size;
+		this.weight = weight;
+		this.age = age;
 	}
 	
-	public Integer getAlter() {
-		return alter;
+	public Integer getAge() {
+		return age;
 	}
 
-	public void setAlter(Integer alter) {
-		this.alter = alter;
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 
-	public Double getGroesse() {
-		return groesse;
+	public Double getSize() {
+		return size;
 	}
 
-	public void setGroesse(Double groesse) {
-		this.groesse = groesse;
+	public void setSize(Double size) {
+		this.size = size;
 	}
 
-	public Double getGewicht() {
-		return gewicht;
+	public Double getWeight() {
+		return weight;
 	}
 
-	public void setGewicht(Double zahl2) {
-		this.gewicht = zahl2;
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 
-	public Double berechnen() {
-		bmi=Math.round(gewicht/(groesse*groesse)*10)/10.0;
+	public Double calculate() {
+		bmi=Math.round(weight/(size*size)*10)/10.0;
 		return bmi;
 	}
 
-	public String interpretieren() {
+	public String interpret() {
 		String interpretation="";
 		if (bmi<16) {
 			interpretation="starkes Untergewicht";
@@ -76,15 +76,15 @@ public class BMICalculator {
 		return interpretation;
 	}
 	
-	public Boolean isOptimalterBMMI () {
+	public Boolean isOptimalBMI () {
 		Boolean optimalerBMI=false;
 		
-		if ((alter>=19 && alter <= 24 && bmi >= 19 && bmi <= 24)
-				|| (alter>=25 && alter <= 34 && bmi >= 20 && bmi <= 25)
-				|| (alter>=35 && alter <= 44 && bmi >= 21 && bmi <= 26)
-				|| (alter>=45 && alter <= 54 && bmi >= 22 && bmi <= 27)
-				|| (alter>=55 && alter <= 64 && bmi >= 23 && bmi <= 28)
-				|| (alter>=65 && bmi >= 24 && bmi <= 29)) {
+		if ((age>=19 && age <= 24 && bmi >= 19 && bmi <= 24)
+				|| (age>=25 && age <= 34 && bmi >= 20 && bmi <= 25)
+				|| (age>=35 && age <= 44 && bmi >= 21 && bmi <= 26)
+				|| (age>=45 && age <= 54 && bmi >= 22 && bmi <= 27)
+				|| (age>=55 && age <= 64 && bmi >= 23 && bmi <= 28)
+				|| (age>=65 && bmi >= 24 && bmi <= 29)) {
 			optimalerBMI=true;
 		}
 		
