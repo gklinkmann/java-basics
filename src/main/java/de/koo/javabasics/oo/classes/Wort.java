@@ -2,7 +2,7 @@ package de.koo.javabasics.oo.classes;
 /**
  * Klasse für einzelne Wörter
  * 
- * @author Dozent-B360
+ * @author gklinkmann
  *
  */
 public class Wort {

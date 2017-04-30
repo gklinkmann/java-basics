@@ -2,7 +2,7 @@ package de.koo.javabasics.oo.inheritance;
 /**
  * Klasse für Zeichenketten
  * 
- * @author Dozent-B360
+ * @author gklinkmann
  *
  */
 public class Satz {

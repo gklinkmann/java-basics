@@ -2,7 +2,7 @@ package de.koo.javabasics.oo.classes;
 /**
  * Klasse zur Erzeugung von Menschen
  * 
- * @author Dozent-B360
+ * @author gklinkmann
  */
 public class Mensch {
 
