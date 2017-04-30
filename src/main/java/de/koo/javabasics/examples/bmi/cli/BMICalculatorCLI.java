@@ -2,9 +2,9 @@ package de.koo.javabasics.examples.bmi.cli;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import de.koo.javabasics.examples.bmi.BMIRechner;
+import de.koo.javabasics.examples.bmi.BMICalculator;
 
-public class RechnerCLI {
+public class BMICalculatorCLI {
 	private Double groesse;
 	private Double gewicht;
 	private Integer alter;
@@ -13,7 +13,7 @@ public class RechnerCLI {
 	/**
 	 * Default Konstruktor (kann auch entfallen)
 	 */
-	public RechnerCLI() {
+	public BMICalculatorCLI() {
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class RechnerCLI {
 	 */
 	private void berechnen() {
 		// Konsolenausgabe der eingelesenen Zahl
-		BMIRechner bmiRechner=new BMIRechner(groesse,gewicht,alter);
+		BMICalculator bmiRechner=new BMICalculator(groesse,gewicht,alter);
 		System.out.println("BMI: " + bmiRechner.berechnen() +" - "+ bmiRechner.interpretieren());
 
 		if (bmiRechner.isOptimalterBMMI()) {
@@ -72,7 +72,7 @@ public class RechnerCLI {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		RechnerCLI rechnerCLI = new RechnerCLI();
+		BMICalculatorCLI rechnerCLI = new BMICalculatorCLI();
 		rechnerCLI.eingeben();
 		rechnerCLI.berechnen();
 	}

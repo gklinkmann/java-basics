@@ -1,23 +1,23 @@
 package de.koo.javabasics.examples.bmi;
 
-public class BMIRechner {
+public class BMICalculator {
 	private Double groesse, gewicht;
 	private Double bmi;
 	private Integer alter;
 
 	
-	public BMIRechner() {
+	public BMICalculator() {
 		bmi=0.0;
 		alter=0;
 	}
 
-	public BMIRechner(Double groesse, Double gewicht) {
+	public BMICalculator(Double groesse, Double gewicht) {
 		this.groesse = groesse;
 		this.gewicht = gewicht;
 		alter=0;
 	}
 
-	public BMIRechner(Double groesse, Double gewicht,Integer alter) {
+	public BMICalculator(Double groesse, Double gewicht,Integer alter) {
 		this.groesse = groesse;
 		this.gewicht = gewicht;
 		this.alter = alter;

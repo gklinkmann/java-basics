@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import de.koo.javabasics.examples.bmi.BMIRechner;
+import de.koo.javabasics.examples.bmi.BMICalculator;
 
 /**
  * GUI für Berechnungen
@@ -22,7 +22,7 @@ import de.koo.javabasics.examples.bmi.BMIRechner;
  * @author
  */
 
-public class RechnerGUI extends Frame {
+public class BMICalculatorGUI extends Frame {
 	// Anfang Attribute
 	private static final long serialVersionUID = 6773296787435533965L;
 	private TextField txFieldAlter, txFieldGroesse, txFieldGewicht, txFieldAusgabe;
@@ -35,7 +35,7 @@ public class RechnerGUI extends Frame {
 	 * 
 	 * @param title
 	 */
-	public RechnerGUI(String title) {
+	public BMICalculatorGUI(String title) {
 		super(title);
 	}
 	
@@ -172,7 +172,7 @@ public class RechnerGUI extends Frame {
 		Double gewicht = new Double(eingabeGewicht);
 
 		// Erzeugen eines neuen Objekts der Klasse Rechenoperation
-		BMIRechner bmiRechner = new BMIRechner();
+		BMICalculator bmiRechner = new BMICalculator();
 		bmiRechner.setAlter(alter);
 		bmiRechner.setGroesse(groesse);
 		bmiRechner.setGewicht(gewicht);
@@ -204,7 +204,7 @@ public class RechnerGUI extends Frame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		RechnerGUI rechnerGUI=new RechnerGUI("BMI Rechner");
+		BMICalculatorGUI rechnerGUI=new BMICalculatorGUI("BMI Rechner");
 		rechnerGUI.anzeigen();
 	}
 
