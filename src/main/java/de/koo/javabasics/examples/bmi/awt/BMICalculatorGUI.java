@@ -37,16 +37,6 @@ public class BMICalculatorGUI extends Frame {
 	 */
 	public BMICalculatorGUI(String title) {
 		super(title);
-	}
-	
-	//=======================================================
-	// Anfang Methoden
-	//=======================================================
-
-	/**
-	 * anzeigen der Oberfläche
-	 */
-	public void show() {
 		Label lbHeading = new Label();
 		Label lbAge = new Label();
 		Label lbSize = new Label();
@@ -204,8 +194,7 @@ public class BMICalculatorGUI extends Frame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		BMICalculatorGUI calculatorGUI=new BMICalculatorGUI("BMI Rechner");
-		calculatorGUI.show();
+		new BMICalculatorGUI("BMI Rechner");
 	}
 
 }
