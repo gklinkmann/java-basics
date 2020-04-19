@@ -18,17 +18,6 @@ public class MediaPlayer {
 	 */
 	public static void main(String[] args) {
 		Media m1=new Cd("back in black", new StringBuffer("AC / DC 2005"));
-		// Attribut beschreibung mit Wert füllen für m1
-		//((Cd)m1).setBeschreibung(new StringBuffer("AC / DC 2005"));
-		// oder
-		//((Audio)m1).setBeschreibung(new StringBuffer("AC / DC 2005"));
-		// m1
-		//(Cd)m1
-		//((Cd)m1)
-		//((Cd)m1).setBeschreibung()
-		//((Cd)m1).setBeschreibung(new StringBuffer())
-		//((Cd)m1).setBeschreibung(new StringBuffer("Wert"))
-		
 		
 		Media m2=new Dvd("kill bill");
 		Media m3=new Bluray("kill bill 2");
