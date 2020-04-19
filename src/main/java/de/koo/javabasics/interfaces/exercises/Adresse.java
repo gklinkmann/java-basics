@@ -16,8 +16,8 @@ public class Adresse{
 	 */	
 	public Adresse() {
 		emails=new LinkedHashSet<String>();
-		emails.add("gero.klinkmann@zivit.de");
-		emails.add("thomas.hanke@zivit.de");
+		emails.add("gero.klinkmann@itzbund.de");
+		emails.add("thomas.hanke@itzbund.de");
 	}
 	
 	public Adresse(Set<String> emails) {

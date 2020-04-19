@@ -37,13 +37,13 @@ public class MediaPlayer {
 		Map<String, Adresse> adressen=new HashMap<String, Adresse>();
 
 		SortedSet emails=new TreeSet();
-		emails.add("eva@zivit.de");
-		emails.add("eva.kowalski@zivit.de");
+		emails.add("eva@itzbund.de");
+		emails.add("eva.kowalski@itzbund.de");
 		adressen.put("eva", new Adresse(emails));
 		
 		emails=new TreeSet();
-		emails.add("adam@zivit.de");
-		emails.add("adam.kowalski@zivit.de");
+		emails.add("adam@itzbund.de");
+		emails.add("adam.kowalski@itzbund.de");
 		
 		adressen.put("adam", new Adresse(emails));
 
